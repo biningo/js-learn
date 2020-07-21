@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+<script>
+
+    var arr = ['one','tow','three']
+    var arr2 = arr.map(x=>{
+        return x+":biningo"
+    })
+    console.log(arr2);
+    
+
+    var arr = [4,3,5,99,0]
+    console.log(arr.sort());
+    arr.push(66)
+    console.log(arr.pop());
+    
+    
+    //
+    var arr = [1,2,3,4,5,6]
+    arr = arr.map(v=>v+1)
+    console.log(arr);
+    arr = arr.filter(v=>v%2==1)
+    console.log(arr);
+
+    var arr = [1,2,3,4,5,6]
+    arr.push(99) //[1,2,3,4,5,6,99]
+    var v = arr.pop() //99
+    var v = arr.shift() //1
+    var v = arr.unshift(99) 
+    console.log(arr);//[99,2,3,4,5,6]
+    
+    //splice
+    var arr = [1,2,3,4,5]
+    arr.splice(1,1) //1位置之后 删除2个元素
+    console.log(arr); // [1,3,4,5]
+
+//concat
+    var arr1 = [1,2]
+    var arr2 = [3,4]
+    var arr3 = [5,6]
+    var arr = arr1.concat(arr2,arr3) //[1,2,3,4,5,6]
+    console.log(arr);
+    var arr = arr1.concat(arr2) //[1,2,3,4]
+    console.log(arr);
+    
+    
+    //slice
+    var arr = [1,2,3,4]
+    var arr1 = arr.slice(1) //[2,3,4] index=[1,)
+    console.log(arr1); 
+    
+    var arr2 = arr.slice(1,3) // [2,3]  index=[1,3)
+    console.log(arr2);
+    
+
+    //sort
+    var arr = [{name:"one",age:19},{name:"tow",age:10},{name:"three",age:9}]
+    var arr1 = arr.sort((x,y)=>{
+        return x.age-y.age
+    })
+    console.log(arr1);
+
+    var arr = [1,2,3,4,5]
+    var arr1 = arr.sort((x,y)=>y-x) //降序
+    console.log(arr1);
+    
+
+    //every some
+    var arr = [-2,1,2,3,4,5]
+    console.log(arr.some(x=>x%2==0)); //true 某个条件达成即为true
+    console.log(arr.every(x=>x>0)); //false 有一个不符合 即false
+    
+    
+    
+
+</script>
+
+
+
+
+</html>

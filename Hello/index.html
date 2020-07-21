@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<script src="scripts/main.js"></script>
+<body>
+
+<img id="yer" src="imgs/yer0.png" style="height: 400px;width: 400px">
+<button id="pre">
+    上一张
+</button>
+<button id="next">
+    下一张
+</button>
+
+<script>
+    // Hello('biningo',18);
+    // document.getElementById('btn1').onclick=btn1_click;
+    let c = 0;
+    document.getElementById('pre').onclick = function () {
+      document.getElementById('yer').setAttribute('src','imgs/yer'+(c-1)%4+'.png');
+        c=(c-1)%4;
+    };
+
+    document.getElementById('next').onclick = function () {
+        document.getElementById('yer').setAttribute('src','imgs/yer'+(c+1)%4+'.png');
+        c=(c+1)%4;
+
+    };
+
+
+</script>
+
+
+</body>
+</html>

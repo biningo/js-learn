@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+</body>
+
+
+<script>
+    
+    
+    function f1(){
+        var d = 88;
+        e=99;
+        var a=1,b=2,c=3;
+        console.log(d);
+        console.log(a);
+    }
+    // f1()
+    
+    function f2(){
+        // console.log(d);  无法使用
+        console.log(e); //全局变量 可以
+        console.log(a); //无法使用
+        
+    }
+    // f2()
+
+
+
+    function f3(){
+        if(1==1){
+            let a=2; //仅仅适用于if块
+        }
+        // console.log(a);
+        
+    }
+    // f3()
+
+
+
+    var v1;
+    console.log(v1==undefined);
+    var name="biningo";
+    var name;
+    console.log(name);
+    console.log(1+2+'3');
+    console.log('3'+1+2);
+    console.log(1+2+'3'+4+5);
+    
+    
+    //数据类型
+    var arr = [1,2,3,4] //数组
+    var stu = {name:"biningo",age:"age"} //对象
+
+    console.log(stu.age);
+    console.log(typeof stu);
+    console.log(typeof arr);
+    console.log(typeof f1);
+    
+
+    //null和undefined
+    console.log(null==undefined);
+    
+    
+
+
+
+    
+
+</script>
+
+
+</html>

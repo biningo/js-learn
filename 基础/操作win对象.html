@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+
+<script>
+
+    console.log(window.innerHeight);
+    // console.log(window.close());  关闭当前窗口
+//     window.open() - 打开新窗口
+// window.close() - 关闭当前窗口
+// window.moveTo() -移动当前窗口
+// window.resizeTo() -重新调整当前窗口
+
+    
+//     //screen 当前屏幕
+//     screen.width
+// screen.height
+// screen.availWidth
+// screen.availHeight
+// screen.colorDepth
+// screen.pixelDepth
+    // console.log(screen.width);
+
+
+    //location
+    // console.log(location.href);
+    // console.log(location.hostname);
+    // console.log(window.history);
+
+
+    //navigator
+    var cookieEnable = navigator.cookieEnabled //cookie是否启用
+    var appName = navigator.appName //浏览器的应用程序名称 chrom  IE  Fiex
+
+    var userAgent = navigator.userAgent //请求的 user-agent 
+
+    console.log(cookieEnable);
+    console.log(appName);
+    console.log(userAgent);
+
+
+
+    
+
+
+
+    //弹窗
+    var r = confirm("请按按钮");
+    if (r == true) {
+        x = "您按了确认！";
+    } else {
+        x = "您按了取消！";
+    }
+
+    var person = prompt("请输入您的姓名", "比尔盖茨"); //第二个是默认值
+    if (person != null) {
+        document.getElementById("demo").innerHTML = "你好 " + person + "！今天过的怎么样？";
+    }
+
+
+
+
+</script>
+
+
+</html>

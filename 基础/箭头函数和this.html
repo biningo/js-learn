@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+<script>
+
+    var name = "win"
+    var Stu = {
+        name:"biningo",
+        Say:function(){
+            console.log(this.name);
+            
+        },
+        Say2:()=>{
+            console.log(this.name); //和当前Stu对象属于同一个作用域
+            
+        }
+    }
+    Stu.Say()
+    Stu.Say2() //win  箭头函数默认绑定外层this 并且无法修改
+
+
+
+
+    //apply call  bind
+    function F(a,b){
+        console.log(a,b);
+        console.log(this.name);
+    }
+
+    var Obj = {
+        name:"Obj",
+    }
+
+    F.call(Obj,"a","b") //this.name:Obj
+    F.apply(Obj,["a","b"]) //和call一样，但是参数以数组方式传递
+    var f = F.bind(Obj,'a','b') //绑定 返回新的函数
+    f()
+    
+
+
+
+
+</script>
+
+</html>

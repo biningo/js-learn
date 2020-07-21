@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+
+</head>
+
+<body>
+    <button onclick="document.writeln('清空网页')">清空</button>
+
+    <div id="h"></div>
+    <button onclick="document.getElementById('h').style.display='block'">显示</button>
+    <button onclick="document.getElementById('h').style.display='none'">隐藏</button>
+    <div id="d1">
+        <p>1
+        <div>biningo</div>
+        </p>
+        <li>2</li>
+        <u>hahaha</u>
+    </div>
+
+</body>
+
+<script>
+    console.log(document.getElementsByTagName('div')[0]);
+
+    h = document.getElementById("h");
+    h.innerHTML = '<u>Biningo</u>'; //可以添加html标签+文本
+    document.getElementById("h").innerText = document.getElementById("h").innerText + "hahah" //只是文本内容
+    console.log(document.getElementById("d1").innerText); //包括子标签内容
+
+    //修改样式
+    h.style.fontSize = "100px"; //改变样式
+
+
+
+
+
+</script>
+
+</html>

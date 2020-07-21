@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+//1
+    function f1(a,b){
+        return a+b
+    }
+    //匿名函数1
+    var f2 = function(a,b){return a+b;}
+    console.log(f1(1,2));
+    console.log(f2(1,2));
+    
+
+ //2
+    //函数提升
+    // JavaScript 函数能够在声明之前被调用： 此法不适用于匿名函数
+    f3()
+    function f3(){
+        console.log("f3");  
+    }
+
+//3
+    //匿名自己调用
+    (function(name){
+        console.log(name);
+    })('biningo');        
+
+
+//4
+    //函数是对象
+    function f4(a,b){
+        console.log(arguments.length); //传入参数的个数
+    } 
+    f4(1,2) //2
+    f4(1,2,3) //3
+
+    console.log(f4.toString());
+    
+
+//5
+    //箭头函数
+    //箭头函数没有this
+    //箭头函数未被提升
+    //使用 const 比使用 var 更安全，因为函数表达式始终是常量值
+
+    //ES6
+    const f5 = (x,y)=>x*y
+    console.log(f5(2,4));
+    const f6 = name=>{
+        console.log(name);
+        return name;
+    }
+    console.log(f6("biningo"));
+    
+
+//6
+    //arguments 参数值
+    function f7(a,b,c){
+        
+        console.log(arguments[0]);
+        console.log(c);
+        
+        
+    }
+    f7(1,2,3,4)
+    
+
+//7
+    //闭包
+    function f8(){
+        var count=0;
+        function f88(){
+            count+=1
+            return count;
+        }
+        return f88;
+    }
+
+    var f9 = f8()
+    console.log(f9()); //1
+    console.log(f9()); //2
+
+    
+    var name = "The Window";
+
+　　 var object = {
+　　　　name : "My Object",
+
+　　　　getNameFunc : function(){
+　　　　　　return function(){
+　　　　　　　　return this.name; //this是window的
+　　　　　　};
+
+　　　　}
+
+　　};
+
+　　console.log(object.getNameFunc()()); //window
+
+
+　　var name = "The Window";
+
+　　var object = {
+　　　　name : "My Object",
+
+　　　　getNameFunc : function(){
+　　　　　　var that = this; //这个this是对象的
+　　　　　　return function(){
+　　　　　　　　return that.name; 
+　　　　　　};
+
+　　　　}
+
+　　};
+
+　　console.log(object.getNameFunc()());
+
+
+
+
+</script>
+
+</html>

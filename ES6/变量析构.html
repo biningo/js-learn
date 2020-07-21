@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    var [a,b,c] = [1,2,3];
+    console.log(a,b,c);
+    var  [x, y, z] = new Set(['a', 'b', 'c']);
+    console.log(x,y,z);
+
+    //析构默认值
+    var  [x=8,y=8,z=8] = [1]
+    console.log(x,y,z);
+
+    //对象析构
+    var stu = {name:"biningo",age:18}
+    var {name,age} = stu 
+    console.log(name,age);
+    var {name} = stu
+    console.log(name);
+
+    var {name:username} = stu
+    console.log(username);
+
+    //对象方法析构
+    var {log} = console
+    log("abc")
+
+
+    //函数析构
+    var arr = [[1,2],[3,4],[5,6]]
+    var arr2 = arr.map(x=>x[0]+x[1])
+    console.log(arr2);
+
+//    交换变量的值
+    let xx = 1;
+    let yy = 2;
+
+    [xx, yy] = [yy, xx];
+    log(xx,yy)
+</script>
+
+
+
+</html>

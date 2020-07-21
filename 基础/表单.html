@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="login" onsubmit="return LoginHandle()" > 
+        用户名：<input  type="text" name="username" required/>
+        密码： <input type="password" name="pwd">
+        <input type="submit"  />
+    </form>
+
+    <hr>
+
+    <form id="login-form" method="post" onsubmit="return checkForm()">
+        <input type="text" id="username" name="username">
+        <input type="password" id="password" name="password">
+        <input type="password" id="many-password" name="password-many" hidden >
+        <button type="submit">Submit</button>
+    </form>
+
+
+</body>
+
+<script>
+    function LoginHandle(){
+        var username = document.forms['login']['username'].value
+        var pwd = document.forms['login']['pwd'].value
+        console.log(username,pwd);
+        return false
+    }
+    
+    function checkForm() {
+        var pwd = document.getElementById('password');
+        var many_pwd = document.getElementById("many-password")
+        // 把用户输入的明文变为MD5:
+        many_pwd.value = pwd.value+"aaaaaaaaaaaaaaaaaaaaaaaaa";
+        // 继续下一步:
+        return false;
+    }
+
+
+
+    
+
+
+</script>
+
+</html>

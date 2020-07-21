@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+//1
+    var student  = {
+        name:"biningo",
+        age:18,
+        Say:function(){
+            console.log(this.name);
+            console.log(this.age);
+        }
+    }
+
+    student.Say()
+    console.log(student.name);
+    console.log(student['name']);
+    console.log("---------------");
+    
+//for in 遍历对象
+    for(let i in student){
+        console.log(i); //遍历属性和函数名字
+    }
+
+
+
+//2
+    // get set
+
+    var obj1 = {
+        first_name:"a",
+        last_name:"b",
+        get full_name(){
+            return this.first_name+":"+this.last_name;
+        },
+        set full_name(name){
+            name = name.split(":")
+            this.first_name=name[0]
+            this.last_name = name[1]
+        }
+        
+    }
+    console.log(obj1.full_name); //相当于属性
+    obj1.full_name = "biningo:bingege"
+    console.log(obj1.last_name);
+    
+
+//3
+    // 构造函数创建对象 创建了一个模板 必须加this
+    //1.new 先创建空对象
+    //2.this指向空对象
+    //3.根据构造函数里面的代码给this添加属性和方法
+    //4.new返回这个对象
+    
+    function Person(name,age){
+        this.name = name
+        this.age = age
+        this.hello = function(){
+            console.log("hello");
+            console.log(this.name);
+            
+        }
+    }
+
+    var p = new Person("biningo",18);
+    console.log(p.name);
+    p.hello()
+
+
+
+//4
+    //对象原形 prototype
+    //构造函数创建的对象无法临时添加属性
+    //但是调用prototype可以
+    Person.prototype.hobby=["basketball","running"]
+    Person.prototype.Hi  = ()=>console.log("Hi");
+    
+    var p = new Person("biningo",18);
+    console.log(p.hobby);
+    p.Hi()
+
+
+
+//5
+    // Object
+    console.log(Object.keys(p)); //列出属性名字
+
+
+//6
+
+    var obj3 = {
+        Say:function(){
+            console.log(this); //Obj3 正常
+        }
+    }
+    var obj4 = {
+        Say:()=>{
+            console.log(this); //window
+        }
+    }
+    obj3.Say()
+    obj4.Say()
+
+    
+    class Stu1{
+        constructor(){
+            this.name = "Biningo";
+        }
+        Say(){
+            console.log(this); //正常
+        }
+    }
+
+    class Stu2{
+        Say=()=>{
+            console.log(this); //正常 Stu2
+        }
+    }
+    var stu1 = new Stu1()
+    var stu2 = new Stu2()
+    stu1.Say()
+    stu2.Say()
+
+
+//7 class
+    class Student{
+        #age; //私有字段 需要先声明 普通字段也可以先声明
+        constructor(name,age){
+            this.name = name
+            this.#age = age
+        }
+
+        Say(){
+            console.log("hello");
+        }
+        //静态方法
+        static Hello(){
+            console.log("Hello");
+        }
+    }
+    Student.Hello()
+    var s = new Student("biningo",18)
+    s.Say()
+    console.log(s.age);
+    
+
+
+    //匿名类
+    var stu = class{
+        Say(){}
+    }
+    console.log(stu.name); //stu
+    
+    //具名类
+    var stu = class S{
+        Say(){}
+    }
+    console.log(stu.name); //S
+    
+
+//8 继承
+    class Animal{
+        constructor(){
+            console.log("animal");
+        }
+    }
+    Animal.prototype.Hello = function(){
+        console.log("Hello");
+    }
+
+
+    class Dog extends Animal{
+        constructor(name){
+            super()
+            this.name = name            
+        }
+        Say(){
+            super.Hello() //调用父类方法
+            console.log(this.name);
+        }
+    }
+
+    var dog = new Dog("huang");
+    dog.Hello()
+    dog.Say()
+
+    
+      
+
+    
+
+</script>
+
+
+
+</html>

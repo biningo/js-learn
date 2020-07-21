@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="parent">
+        anb
+        <div>fc</div>
+        <button id="btn" >BTN</button>
+
+    </div>
+
+    <div id="my">
+
+    </div>
+
+
+</body>
+
+
+<script>
+    //nodeName 节点标签的名字
+    //nodeValue  节点的innerHTML
+    var nd = document.getElementById("parent").childNodes[2].nodeValue//第一个节点childNodes[0] 是本节点的文本内容
+       console.log(nd);
+    var my = document.getElementById("my")
+    var h = document.createElement("h1")
+    h.innerText = "Biningo"
+    my.appendChild(h)
+    var p = document.createTextNode("这时一个段落")
+    my.appendChild(p)
+
+    my.insertBefore(p,h) //会在my下的p之前插入h 并列
+
+    my.removeChild(h) //删除其中的子节点
+
+
+    my.replaceChild(h,p) //将p替换为h
+</script>
+
+
+</html>
